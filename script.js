@@ -1,3 +1,8 @@
+const keypad = document.querySelector(".keypad")
+keypad.addEventListener("click", (event) => {
+	const target = event.target
+	render(target.textContent)
+})
 function add(a, b) {
 	console.log(a + b)
 	return a + b
@@ -33,4 +38,9 @@ function operate(operator, firstNumber, secondNumber) {
 			divide(firstNumber, secondNumber)
 			break
 	}
+}
+
+const display = document.querySelector(".display")
+function render(value) {
+	display.value = value
 }
